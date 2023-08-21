@@ -1,0 +1,15 @@
+/* Add application styles & imports to this file! */
+table,
+th,
+td {
+  border: 1px solid #000000;
+}
+
+table {
+  width: 100%;
+}
+
+th,
+td {
+  width: 50%;
+}

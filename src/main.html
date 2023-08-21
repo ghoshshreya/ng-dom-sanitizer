@@ -1,0 +1,35 @@
+<table>
+  <tr>
+    <th>Unsafe Values</th>
+    <th>Safe Values</th>
+  </tr>
+
+  <tr>
+    <td>{{unsafeTitle}}</td>
+    <td [innerHtml]="safeTitle"></td>
+  </tr>
+
+  <tr>
+    <td><a [href]="unsafeUrl">Click Me</a></td>
+    <td><a [href]="safeUrl">Click Me</a></td>
+  </tr>
+
+  <tr>
+    <!--angular considers this safe in case of style-->
+    <td><span style="background-color: {{ unsafeStyle }}">Click Me</span></td>
+    <td><span [style.background-color]="safeStyle">Click Me</span></td>
+  </tr>
+
+  <!--Angular doesnot sanitze resource URLs because they contain arbitrary code-->
+  <!-- <tr>
+    <td>
+      <input type="text" [ngModel]="id" />Enter github id
+      <iframe src="unsafeResourceUrl"></iframe>
+    </td>
+
+    <td>
+      <input type="text" [ngModel]="id" />Enter github id
+      <iframe src="safeResourceUrl"></iframe>
+    </td>
+  </tr> -->
+</table>
